@@ -25,23 +25,23 @@ public class BookingStepDefinitions {
         if (fName != ""){
             apiBody.put("firstname", fName);
         }
-        else if (lName != ""){
+        if (lName != ""){
             apiBody.put("lastname", lName);
         }
-        else if (price != ""){
+        if (price != ""){
             apiBody.put("totalprice", price);
         }
-        else if (dPaid != ""){
+        if (dPaid != ""){
             apiBody.put("depositpaid", dPaid);
         }
-        else if (aNeeds != ""){
+        if (aNeeds != ""){
             apiBody.put("additionalneeds", aNeeds);
         }
-        else if (cIn != "" || cOut != ""){
+        if (cIn != "" || cOut != ""){
             apiBody.put("bookingdates", new HashMap<String, String>() {{
                 if (cIn != ""){
                     put("checkin", cIn);}
-                else if (cOut != ""){
+                if (cOut != ""){
                     put("checkout", cOut);}
             }});
         }
