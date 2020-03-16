@@ -1,4 +1,4 @@
-package starter.trades;
+package starter.func;
 
 import net.serenitybdd.rest.SerenityRest;
 
@@ -6,7 +6,7 @@ import java.util.Map;
 
 import static java.util.stream.Collectors.toMap;
 
-public class TradeResponse {
+public class Response {
     public Map<String, String> returned() {
        return mapOfStringsFrom(SerenityRest.lastResponse().getBody().as(Map.class));
     }
@@ -16,5 +16,9 @@ public class TradeResponse {
                 .stream()
                 .collect(toMap(Map.Entry::getKey,
                         entry -> entry.getValue().toString()));
+    }
+
+    public static <T> T extractJsonData (String key) {
+        return SerenityRest.lastResponse().jsonPath().get(key);
     }
 }

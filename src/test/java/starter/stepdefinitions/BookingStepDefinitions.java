@@ -4,7 +4,9 @@ import io.cucumber.java.en.*;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import net.thucydides.core.annotations.Steps;
-import starter.trades.RecordNewBooking;
+import starter.func.RecordNewBooking;
+import starter.func.Response;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,6 +16,10 @@ public class BookingStepDefinitions {
 
     @Steps
     RecordNewBooking recordNewBooking;
+
+    @Steps
+    Response bookingResponse;
+
     RequestSpecification requestSpec;
 //    RequestSpecBuilder builder;
 //    Map<String, Object> apiBody;

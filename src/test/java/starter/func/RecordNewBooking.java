@@ -1,11 +1,9 @@
-package starter.trades;
+package starter.func;
 
 import io.restassured.specification.RequestSpecification;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import starter.WebServiceEndPoints;
-
-import java.util.Map;
 
 public class RecordNewBooking {
 
