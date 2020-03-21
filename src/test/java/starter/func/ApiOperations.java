@@ -43,6 +43,7 @@ public class ApiOperations {
         log.info("Delete URL :"+ getUrl);
 
         SerenityRest.given()
+                .auth().preemptive().basic("admin","password123")
                 .when()
                 .delete(getUrl);
     }
@@ -55,6 +56,7 @@ public class ApiOperations {
         log.info("Update URL :"+ getUrl);
 
         SerenityRest.given()
+                .auth().preemptive().basic("admin","password123")
                 .spec(requestSpec)
                 .when()
                 .put(getUrl);
