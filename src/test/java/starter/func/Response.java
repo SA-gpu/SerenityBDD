@@ -21,4 +21,5 @@ public class Response {
     public static <T> T extractJsonData (String key) {
         return SerenityRest.lastResponse().jsonPath().get(key);
     }
+
 }
