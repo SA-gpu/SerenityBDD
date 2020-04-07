@@ -6,10 +6,8 @@ import io.restassured.specification.RequestSpecification;
 import net.thucydides.core.annotations.Steps;
 import starter.func.ApiOperations;
 import starter.func.Response;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import static net.serenitybdd.rest.SerenityRest.lastResponse;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
