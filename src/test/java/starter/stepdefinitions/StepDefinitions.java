@@ -4,17 +4,17 @@ import io.cucumber.java.en.*;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import net.thucydides.core.annotations.Steps;
-import starter.func.ApiOperations;
+import starter.func.StepsReference;
 import starter.func.Response;
 import java.util.HashMap;
 import java.util.Map;
-import static net.serenitybdd.rest.SerenityRest.lastResponse;
+
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class StepDefinitions {
 
     @Steps
-    ApiOperations apiOperations;
+    StepsReference stepReferences;
 
     @Steps
     Response bookingResponse;
@@ -58,25 +58,25 @@ public class StepDefinitions {
 
     @When("record the booking")
     public void addBooking() {
-        apiOperations.postDetails(requestSpec);
+        stepReferences.postCall(requestSpec);
     }
 
     @When("Get the booking details on id")
     public void getBookingDetails() {
         Integer id = Response.extractJsonData("bookingid");
-        apiOperations.getDetails(id);
+        stepReferences.getCall(id);
     }
 
     @When("Delete booking details")
     public void deleteBookingDetails() {
         Integer id = Response.extractJsonData("bookingid");
-        apiOperations.deleteDetails(id);
+        stepReferences.deleteCall(id);
     }
 
     @When("update the booking")
     public void updateTheBooking() {
         Integer id = Response.extractJsonData("bookingid");
-        apiOperations.updateDetails(requestSpec, id);
+        stepReferences.updateCall(requestSpec, id);
     }
 
     @Then("the recorded booking api response code should be: {string}")

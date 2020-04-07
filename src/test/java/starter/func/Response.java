@@ -1,9 +1,7 @@
 package starter.func;
 
 import net.serenitybdd.rest.SerenityRest;
-
 import java.util.Map;
-
 import static java.util.stream.Collectors.toMap;
 
 public class Response {
